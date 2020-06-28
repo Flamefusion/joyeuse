@@ -9,7 +9,7 @@ jobs:
       VERSION: '3.4'
       TWRP_MANIFEST: 'twrp-9.0'
       VENDOR: 'redmi'
-      DEVICE: 'joyeuse
+      DEVICE: 'joyeuse'
    steps:
       - run:
           command: |
