@@ -26,6 +26,7 @@ jobs:
            repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b ${TWRP_MANIFEST}
            repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle --prune --optimized-fetch
            git clone https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} device/${VENDOR}/${DEVICE}
+           ls
            export ALLOW_MISSING_DEPENDENCIES=true
            export LC_ALL=C
            source build/envsetup.sh
