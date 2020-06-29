@@ -27,6 +27,9 @@ jobs:
            repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle --prune --optimized-fetch
            git clone https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} device/${VENDOR}/${DEVICE}
            ls
+           rm -rf build && rm -rf system/core && rm -rf vendor/omni && rm -rf external/f2fs-tools && rm -rf bootable/recovery
+           git clone https://github.com/TWRP-10-Modified-Repos/android_build.git -b android-10 build && git clone https://github.com/TWRP-10-Modified-Repos/android_build_soong.git -b android-10 build/soong && git clone https://github.com/TWRP-10-Modified-Repos/android_system_core.git -b android-10 system/core && git clone https://github.com/TWRP-10-Modified-Repos/android_vendor_omni.git -b android-10 vendor/omni
+           git clone  https://github.com/TWRP-10-Modified-Repos/android_external_f2fs-tools.git -b android-10 external/f2fs-tools && git clone https://github.com/TWRP-10-Modified-Repos/android_bootable_recovery.git -b android-10.0-new bootable/recovery
            export ALLOW_MISSING_DEPENDENCIES=true
            export LC_ALL=C
            source build/envsetup.sh
